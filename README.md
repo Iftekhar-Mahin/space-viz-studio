@@ -1,36 +1,143 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# SPACE Viz Studio
 
-## Getting Started
+A premium architecture portfolio website built with **Next.js 16**, **Prisma**, **PostgreSQL**, **NextAuth v5**, and **Tailwind CSS v4**.
 
-First, run the development server:
+## ✨ Features
+
+- Public portfolio with projects, about, and contact pages
+- Before/after project image slider
+- Testimonials carousel
+- Contact form with email notifications
+- Secure admin dashboard (project management, leads inbox)
+- JWT-based authentication with NextAuth v5
+- Rate-limited contact form
+
+## 🛠 Tech Stack
+
+| Layer | Technology |
+|---|---|
+| Framework | Next.js 16 (App Router) |
+| Styling | Tailwind CSS v4 |
+| Database | PostgreSQL via Prisma ORM |
+| Auth | NextAuth v5 (Credentials) |
+| Email | Nodemailer |
+| Animations | Framer Motion |
+| Forms | React Hook Form + Zod |
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/Iftekhar-Mahin/space-viz-studio.git
+cd space-viz-studio
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Configure environment variables
+
+```bash
+cp .env.example .env
+```
+
+Open `.env` and fill in:
+
+| Variable | Description |
+|---|---|
+| `DATABASE_URL` | PostgreSQL connection string |
+| `NEXTAUTH_SECRET` | Random secret (`openssl rand -base64 32`) |
+| `NEXTAUTH_URL` | App URL (`http://localhost:3000` for local) |
+| `EMAIL_HOST` | SMTP host (e.g. `smtp.gmail.com`) |
+| `EMAIL_PORT` | SMTP port (e.g. `587`) |
+| `EMAIL_USER` | Sender email address |
+| `EMAIL_PASS` | App password (not your login password) |
+| `EMAIL_TO` | Where contact form submissions are sent |
+
+### 4. Set up the database
+
+```bash
+# Push the schema to your PostgreSQL database
+npx prisma db push
+
+# (Optional) Seed with sample data
+npm run seed
+```
+
+### 5. Create an admin user
+
+Run this once to create your admin account (update the values first):
+
+```bash
+npx ts-node --compiler-options '{"module":"CommonJS"}' -e "
+const { PrismaClient } = require('@prisma/client');
+const bcrypt = require('bcryptjs');
+const prisma = new PrismaClient();
+async function main() {
+  const hash = await bcrypt.hash('yourpassword', 12);
+  await prisma.user.create({ data: { email: 'admin@example.com', password: hash, name: 'Admin' } });
+  console.log('Admin created');
+}
+main().finally(() => prisma.\$disconnect());
+"
+```
+
+### 6. Run the development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the site.  
+Admin panel: [http://localhost:3000/admin](http://localhost:3000/admin)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📦 Available Scripts
 
-## Learn More
+| Command | Description |
+|---|---|
+| `npm run dev` | Start development server |
+| `npm run build` | Build for production |
+| `npm run start` | Start production server |
+| `npm run seed` | Seed the database with sample data |
+| `npx prisma studio` | Open Prisma database GUI |
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🌐 Deployment
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+This project requires a **PostgreSQL** database and a Node.js hosting environment.
 
-## Deploy on Vercel
+**Recommended platforms:**
+- [Railway](https://railway.app) — free tier includes PostgreSQL
+- [Render](https://render.com) — free PostgreSQL + Node hosting
+- [Vercel](https://vercel.com) + [Supabase](https://supabase.com) — serverless + managed Postgres
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Set all environment variables from `.env.example` in your hosting platform's dashboard before deploying.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 📁 Project Structure
+
+```
+src/
+├── app/                  # Next.js App Router pages
+│   ├── admin/            # Protected admin dashboard
+│   ├── projects/         # Project portfolio pages
+│   ├── about/            # About page
+│   ├── contact/          # Contact page
+│   └── login/            # Auth login page
+├── components/           # Reusable UI components
+├── actions/              # Server Actions (projects, contact, testimonials)
+├── lib/                  # Auth, DB, utils, validations
+prisma/
+├── schema.prisma         # Database schema
+└── seed.ts               # Sample data seeder
+```
