@@ -1,0 +1,57 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  password  String
+  name      String?
+  createdAt DateTime @default(now())
+}
+
+model Project {
+  id          String   @id @default(cuid())
+  slug        String   @unique
+  name        String
+  location    String
+  category    String
+  problem     String
+  solution    String
+  outcome     String
+  heroImage   String
+  images      String   @default("[]")
+  beforeImage String?
+  afterImage  String?
+  featured    Boolean  @default(false)
+  year        Int
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Testimonial {
+  id        String   @id @default(cuid())
+  name      String
+  role      String
+  content   String
+  rating    Int      @default(5)
+  avatar    String?
+  featured  Boolean  @default(true)
+  createdAt DateTime @default(now())
+}
+
+model Lead {
+  id          String   @id @default(cuid())
+  name        String
+  email       String
+  projectType String
+  budget      String
+  message     String
+  tag         String?
+  read        Boolean  @default(false)
+  createdAt   DateTime @default(now())
+}
