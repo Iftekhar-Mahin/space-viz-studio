@@ -48,19 +48,19 @@ export default function ContactPage() {
                         {
                           icon: Mail,
                           label: "Email Us",
-                          value: "hello@spaceviz.studio",
-                          href: "mailto:hello@spaceviz.studio",
+                          value: "spaceviz.studio@gmail.com",
+                          href: "mailto:spaceviz.studio@gmail.com",
                         },
                         {
                           icon: Phone,
                           label: "Call Us",
-                          value: "+1 (555) 123-4567",
-                          href: "tel:+15551234567",
+                          value: "01768-582654",
+                          href: "tel:+8801768582654",
                         },
                         {
                           icon: MapPin,
                           label: "Visit Us",
-                          value: "421 Design District, NY 10013",
+                          value: "41/12/B, Moulovi Salek Road, Notun Rasta, Zigatola, Dhanmondi, Dhaka 1209",
                           href: null,
                         },
                         {
@@ -102,7 +102,7 @@ export default function ContactPage() {
                       Quick Connect
                     </p>
                     <a
-                      href="https://wa.me/15551234567?text=Hi%20SPACE%20viz%20Studio%2C%20I%27m%20interested%20in%20discussing%20a%20project."
+                      href="https://wa.me/8801768582654?text=Hi%20SPACE%20viz%20Studio%2C%20I%27m%20interested%20in%20discussing%20a%20project."
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center gap-3 bg-[#25D366] text-white px-5 py-3 hover:bg-[#128C7E] transition-colors w-full justify-center font-semibold text-sm"
@@ -118,10 +118,10 @@ export default function ContactPage() {
                       <div className="text-center">
                         <MapPin className="text-accent mx-auto mb-2" size={32} />
                         <p className="text-sm text-text-light font-medium">
-                          421 Design District
+                          Dhanmondi
                         </p>
                         <p className="text-xs text-text-light">
-                          New York, NY 10013
+                          Dhaka, Bangladesh
                         </p>
                       </div>
                     </div>

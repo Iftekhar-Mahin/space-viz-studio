@@ -8,6 +8,8 @@ import { projectSchema, type ProjectFormData } from "@/lib/validations";
 import { createProject } from "@/actions/projects";
 import { ArrowLeft, Save, Loader2, CheckCircle, AlertCircle } from "lucide-react";
 import Link from "next/link";
+import ImageUpload from "@/components/admin/ImageUpload";
+import MultiImageUpload from "@/components/admin/MultiImageUpload";
 
 export default function NewProjectPage() {
   const router = useRouter();
@@ -17,6 +19,8 @@ export default function NewProjectPage() {
   const {
     register,
     handleSubmit,
+    setValue,
+    watch,
     formState: { errors },
   } = useForm<ProjectFormData>({
     resolver: zodResolver(projectSchema),
@@ -127,12 +131,10 @@ export default function NewProjectPage() {
         </div>
 
         <div>
-          <label className={labelClasses}>Hero Image URL *</label>
-          <input
-            type="url"
-            placeholder="https://images.unsplash.com/..."
-            className={inputClasses}
-            {...register("heroImage")}
+          <ImageUpload
+            label="Hero Image *"
+            value={watch("heroImage")}
+            onChange={(url) => setValue("heroImage", url, { shouldValidate: true })}
           />
           {errors.heroImage && (
             <p className="text-red-400 text-xs mt-1">{errors.heroImage.message}</p>
@@ -178,23 +180,27 @@ export default function NewProjectPage() {
           )}
         </div>
 
+        <div>
+          <MultiImageUpload
+            label="Project Gallery (Add Photos)"
+            value={watch("images") ? JSON.parse(watch("images") as string) : []}
+            onChange={(urls) => setValue("images", JSON.stringify(urls))}
+          />
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
-            <label className={labelClasses}>Before Image URL (optional)</label>
-            <input
-              type="url"
-              placeholder="https://..."
-              className={inputClasses}
-              {...register("beforeImage")}
+            <ImageUpload
+              label="Before Image (optional)"
+              value={watch("beforeImage")}
+              onChange={(url) => setValue("beforeImage", url)}
             />
           </div>
           <div>
-            <label className={labelClasses}>After Image URL (optional)</label>
-            <input
-              type="url"
-              placeholder="https://..."
-              className={inputClasses}
-              {...register("afterImage")}
+            <ImageUpload
+              label="After Image (optional)"
+              value={watch("afterImage")}
+              onChange={(url) => setValue("afterImage", url)}
             />
           </div>
         </div>

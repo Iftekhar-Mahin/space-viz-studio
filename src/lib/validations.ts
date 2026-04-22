@@ -15,7 +15,7 @@ export const projectSchema = z.object({
   problem: z.string().min(10, "Client need description is required"),
   solution: z.string().min(10, "Design approach is required"),
   outcome: z.string().min(10, "Result description is required"),
-  heroImage: z.string().url("Please enter a valid image URL"),
+  heroImage: z.string().min(1, "Please provide a hero image"),
   images: z.string().optional(),
   beforeImage: z.string().optional(),
   afterImage: z.string().optional(),

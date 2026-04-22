@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowRight, Mail, Phone, MapPin } from "lucide-react";
+import Logo from "@/components/ui/Logo";
 
 export default function Footer() {
   return (
@@ -27,12 +28,8 @@ export default function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
             {/* Brand */}
             <div className="md:col-span-1">
-              <div className="flex items-center gap-2 mb-4">
-                <div className="w-10 h-10 border-2 border-accent flex items-center justify-center">
-                  <span className="text-accent font-heading text-lg font-bold">
-                    S
-                  </span>
-                </div>
+              <div className="flex items-center gap-2 mb-4 group">
+                <Logo className="w-10 h-10" />
                 <div className="flex flex-col leading-none">
                   <span className="text-white font-heading text-lg tracking-widest font-bold">
                     SPACE<span className="text-accent">viz</span>
@@ -93,19 +90,20 @@ export default function Footer() {
               </h4>
               <div className="flex flex-col gap-3">
                 <a
-                  href="mailto:hello@spaceviz.studio"
+                  href="mailto:spaceviz.studio@gmail.com"
                   className="flex items-center gap-2 text-white/50 hover:text-accent text-sm transition-colors"
                 >
-                  <Mail size={14} /> hello@spaceviz.studio
+                  <Mail size={14} className="shrink-0" /> spaceviz.studio@gmail.com
                 </a>
                 <a
-                  href="tel:+15551234567"
+                  href="tel:+8801768582654"
                   className="flex items-center gap-2 text-white/50 hover:text-accent text-sm transition-colors"
                 >
-                  <Phone size={14} /> +1 (555) 123-4567
+                  <Phone size={14} className="shrink-0" /> 01768-582654
                 </a>
-                <span className="flex items-center gap-2 text-white/50 text-sm">
-                  <MapPin size={14} /> 421 Design District, NY
+                <span className="flex items-start gap-2 text-white/50 text-sm">
+                  <MapPin size={14} className="shrink-0 mt-1" /> 
+                  <span>41/12/B, Moulovi Salek Road, Notun Rasta, Zigatola, Dhanmondi, Dhaka 1209</span>
                 </span>
               </div>
             </div>

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ArrowRight } from "lucide-react";
+import Logo from "@/components/ui/Logo";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -33,11 +34,7 @@ export default function Navbar() {
       <div className="container-custom flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 group">
-          <div className="w-10 h-10 border-2 border-accent flex items-center justify-center transition-all duration-300 group-hover:bg-accent">
-            <span className="text-accent font-heading text-lg font-bold group-hover:text-white transition-colors">
-              S
-            </span>
-          </div>
+          <Logo className="w-10 h-10" />
           <div className="flex flex-col leading-none">
             <span className="text-white font-heading text-lg tracking-widest font-bold">
               SPACE<span className="text-accent">viz</span>
