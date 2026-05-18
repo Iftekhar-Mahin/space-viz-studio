@@ -17,7 +17,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "SPACE viz Studio | Award-Winning Architecture & Design",
+  title: "SPACE viz Studio | Architecture & Design",
   description:
     "SPACE viz Studio creates modern, functional spaces that inspire. From luxury residences to commercial landmarks, we transform visions into architectural masterpieces.",
   keywords: "architecture, design, residential, commercial, interior design, SPACE viz Studio",

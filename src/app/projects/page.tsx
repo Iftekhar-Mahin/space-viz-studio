@@ -8,7 +8,7 @@ import { getProjects } from "@/actions/projects";
 export const metadata: Metadata = {
   title: "Our Projects | SPACE viz Studio",
   description:
-    "Explore our portfolio of award-winning residential, commercial, and interior design projects. Each project showcases our problem-solving approach to architecture.",
+    "Explore our portfolio of residential, commercial, and interior design projects. Each project showcases our problem-solving approach to architecture.",
 };
 
 export default async function ProjectsPage() {

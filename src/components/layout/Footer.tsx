@@ -1,8 +1,17 @@
+"use client";
+
 import Link from "next/link";
-import { ArrowRight, Mail, Phone, MapPin } from "lucide-react";
+import { usePathname } from "next/navigation";
+import { ArrowRight, Mail, Phone, MapPin, MessageCircle } from "lucide-react";
 import Logo from "@/components/ui/Logo";
 
 export default function Footer() {
+  const pathname = usePathname();
+
+  if (pathname?.startsWith("/admin") || pathname === "/login") {
+    return null;
+  }
+
   return (
     <footer className="bg-dark text-white">
       {/* CTA Banner */}
@@ -40,7 +49,7 @@ export default function Footer() {
                 </div>
               </div>
               <p className="text-white/40 text-sm leading-relaxed">
-                Creating spaces that inspire, function, and endure. Award-winning
+                Creating spaces that inspire, function, and endure. Modern
                 architecture for visionary clients.
               </p>
             </div>
@@ -101,9 +110,17 @@ export default function Footer() {
                 >
                   <Phone size={14} className="shrink-0" /> 01768-582654
                 </a>
+                <a
+                  href="https://m.me/spaceviz.studio"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-white/50 hover:text-accent text-sm transition-colors"
+                >
+                  <MessageCircle size={14} className="shrink-0" /> SPACE viz studio
+                </a>
                 <span className="flex items-start gap-2 text-white/50 text-sm">
                   <MapPin size={14} className="shrink-0 mt-1" /> 
-                  <span>41/12/B, Moulovi Salek Road, Notun Rasta, Zigatola, Dhanmondi, Dhaka 1209</span>
+                  <span>41/12/B, Moulovi Salek Road, Notun Rasta, Zigatola, Dhanmondi, Dhaka, Bangladesh, 1209</span>
                 </span>
               </div>
             </div>

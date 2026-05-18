@@ -3,13 +3,10 @@ import Image from "next/image";
 import { ArrowRight, Award, Building2, Users, Sparkles } from "lucide-react";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import Counter from "@/components/ui/Counter";
-import TestimonialsCarousel from "@/components/home/TestimonialsCarousel";
 import { getFeaturedProjects } from "@/actions/projects";
-import { getTestimonials } from "@/actions/testimonials";
 
 export default async function HomePage() {
   const featuredProjects = await getFeaturedProjects();
-  const testimonials = await getTestimonials();
 
   return (
     <>
@@ -31,7 +28,7 @@ export default async function HomePage() {
           <AnimatedSection>
             <div className="gold-line mx-auto mb-8" />
             <p className="text-accent uppercase tracking-[0.3em] text-sm font-semibold mb-6">
-              Award-Winning Architecture Studio
+              Modern Architecture Studio
             </p>
           </AnimatedSection>
 
@@ -71,10 +68,9 @@ export default async function HomePage() {
       <section className="bg-primary py-16 relative">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMtOS45NDEgMC0xOCA4LjA1OS0xOCAxOHM4LjA1OSAxOCAxOCAxOCAxOC04LjA1OSAxOC0xOC04LjA1OS0xOC0xOC0xOHoiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjAzKSIvPjwvZz48L3N2Zz4=')] opacity-50" />
         <div className="container-custom relative">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <Counter end={15} suffix="+" label="Years Experience" />
             <Counter end={120} suffix="+" label="Projects Completed" />
-            <Counter end={8} label="Design Awards" />
             <Counter end={98} suffix="%" label="Client Satisfaction" />
           </div>
         </div>
@@ -155,17 +151,12 @@ export default async function HomePage() {
             </div>
           </AnimatedSection>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
                 icon: Building2,
                 title: "Problem-First Design",
                 desc: "We start with your challenges, not our aesthetics. Every design decision solves a real problem.",
-              },
-              {
-                icon: Award,
-                title: "Award-Winning Work",
-                desc: "8 national design awards and recognition from Architectural Digest, Dwell, and more.",
               },
               {
                 icon: Users,
@@ -194,23 +185,7 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* ===== TESTIMONIALS ===== */}
-      <section className="section-padding bg-bg">
-        <div className="container-custom">
-          <AnimatedSection>
-            <div className="text-center mb-12">
-              <div className="gold-line mx-auto mb-6" />
-              <h2 className="heading-lg text-primary mb-4">
-                What Our Clients <span className="text-accent">Say</span>
-              </h2>
-            </div>
-          </AnimatedSection>
 
-          <AnimatedSection delay={0.2}>
-            <TestimonialsCarousel testimonials={testimonials} />
-          </AnimatedSection>
-        </div>
-      </section>
 
       {/* ===== PROJECT TYPES ===== */}
       <section className="section-padding bg-primary">

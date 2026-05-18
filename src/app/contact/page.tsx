@@ -60,14 +60,20 @@ export default function ContactPage() {
                         {
                           icon: MapPin,
                           label: "Visit Us",
-                          value: "41/12/B, Moulovi Salek Road, Notun Rasta, Zigatola, Dhanmondi, Dhaka 1209",
+                          value: "41/12/B, Moulovi Salek Road, Notun Rasta, Zigatola, Dhanmondi, Dhaka, Bangladesh, 1209",
                           href: null,
                         },
                         {
                           icon: Clock,
                           label: "Office Hours",
-                          value: "Mon–Fri: 9AM – 6PM EST",
+                          value: "Always open",
                           href: null,
+                        },
+                        {
+                          icon: MessageCircle,
+                          label: "Messenger",
+                          value: "SPACE viz studio",
+                          href: "https://m.me/spaceviz.studio", // Assuming this is the handle
                         },
                       ].map((item) => (
                         <div key={item.label} className="flex items-start gap-4">
