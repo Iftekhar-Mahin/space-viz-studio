@@ -6,6 +6,8 @@ export const contactFormSchema = z.object({
   projectType: z.string().min(1, "Please select a project type"),
   budget: z.string().min(1, "Please select a budget range"),
   message: z.string().min(10, "Message must be at least 10 characters"),
+  website: z.string().optional(),
+  turnstileToken: z.string().optional(),
 });
 
 export const projectSchema = z.object({

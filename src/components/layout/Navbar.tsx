@@ -44,7 +44,7 @@ export default function Navbar() {
           <Logo className="w-10 h-10" />
           <div className="flex flex-col leading-none">
             <span className="text-white font-heading text-lg tracking-widest font-bold">
-              SPACE<span className="text-accent">viz</span>
+              VIZ<span className="text-accent">s</span>
             </span>
             <span className="text-white/50 text-[0.6rem] tracking-[0.3em] uppercase">
               Studio

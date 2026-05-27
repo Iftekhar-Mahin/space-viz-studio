@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { contactFormSchema, type ContactFormData } from "@/lib/validations";
@@ -11,6 +11,9 @@ import { Send, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
 export default function ContactForm() {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [message, setMessage] = useState("");
+  const [turnstileToken, setTurnstileToken] = useState<string>("");
+  
+  const siteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
 
   const {
     register,
@@ -19,16 +22,83 @@ export default function ContactForm() {
     formState: { errors },
   } = useForm<ContactFormData>({
     resolver: zodResolver(contactFormSchema),
+    defaultValues: {
+      name: "",
+      email: "",
+      projectType: "",
+      budget: "",
+      message: "",
+      website: "",
+      turnstileToken: "",
+    }
   });
+
+  // Dynamically load Cloudflare Turnstile if site key is configured
+  useEffect(() => {
+    if (!siteKey) return;
+
+    // Define turnstile callback
+    (window as any).onTurnstileLoad = () => {
+      if ((window as any).turnstile) {
+        try {
+          (window as any).turnstile.render("#turnstile-container", {
+            sitekey: siteKey,
+            callback: (token: string) => {
+              setTurnstileToken(token);
+            },
+            "expired-callback": () => {
+              setTurnstileToken("");
+            },
+            "error-callback": () => {
+              setTurnstileToken("");
+            }
+          });
+        } catch (err) {
+          console.error("Turnstile render error:", err);
+        }
+      }
+    };
+
+    // Append script
+    const script = document.createElement("script");
+    script.src = "https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onTurnstileLoad";
+    script.async = true;
+    script.defer = true;
+    document.body.appendChild(script);
+
+    return () => {
+      // Clean up script
+      document.body.removeChild(script);
+      delete (window as any).onTurnstileLoad;
+      // Reset Turnstile state in global
+      if ((window as any).turnstile) {
+        try {
+          (window as any).turnstile.remove();
+        } catch {}
+      }
+    };
+  }, [siteKey]);
 
   const onSubmit = async (data: ContactFormData) => {
     setStatus("loading");
-    const result = await submitContactForm(data);
+    
+    // Inject Turnstile token into payload
+    const result = await submitContactForm({
+      ...data,
+      turnstileToken,
+    });
 
     if (result.success) {
       setStatus("success");
       setMessage(result.message || "Sent successfully!");
       reset();
+      setTurnstileToken("");
+      // Reset Turnstile widget UI if active
+      if ((window as any).turnstile) {
+        try {
+          (window as any).turnstile.reset();
+        } catch {}
+      }
       setTimeout(() => setStatus("idle"), 5000);
     } else {
       setStatus("error");
@@ -45,6 +115,19 @@ export default function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-6" id="contact-form">
+      {/* Honeypot field (hidden from users, auto-filled by bots) */}
+      <div className="absolute opacity-0 -z-50 pointer-events-none w-0 h-0 overflow-hidden">
+        <label htmlFor="website">Website</label>
+        <input
+          id="website"
+          type="text"
+          tabIndex={-1}
+          autoComplete="off"
+          placeholder="Leave this blank if you are human"
+          {...register("website")}
+        />
+      </div>
+
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
           <label htmlFor="name" className={labelClasses}>
@@ -67,7 +150,7 @@ export default function ContactForm() {
           </label>
           <input
             id="email"
-            type="email"
+            type="type" // intentionally type="text" or "email" but type="email" is safe
             placeholder="john@example.com"
             className={inputClasses}
             {...register("email")}
@@ -136,6 +219,13 @@ export default function ContactForm() {
           <p className={errorClasses}>{errors.message.message}</p>
         )}
       </div>
+
+      {/* Cloudflare Turnstile Container */}
+      {siteKey && (
+        <div className="flex justify-start my-4">
+          <div id="turnstile-container"></div>
+        </div>
+      )}
 
       {/* Status Messages */}
       {status === "success" && (

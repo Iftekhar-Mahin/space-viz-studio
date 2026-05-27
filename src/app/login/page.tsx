@@ -48,12 +48,12 @@ export default function LoginPage() {
           <div className="flex items-center justify-center gap-2 mb-4">
             <div className="w-12 h-12 border-2 border-accent flex items-center justify-center">
               <span className="text-accent font-heading text-xl font-bold">
-                S
+                V
               </span>
             </div>
           </div>
           <h1 className="font-heading text-2xl text-white font-bold">
-            SPACE<span className="text-accent">viz</span> Studio
+            VIZ<span className="text-accent">s</span>
           </h1>
           <p className="text-white/40 text-sm mt-2">Admin Dashboard</p>
         </div>
@@ -81,7 +81,7 @@ export default function LoginPage() {
                 />
                 <input
                   type="email"
-                  placeholder="admin@spaceviz.studio"
+                  placeholder="admin@vizs.studio"
                   className="w-full pl-10 pr-4 py-3 bg-white/5 border border-white/10 text-white placeholder:text-white/20 focus:outline-none focus:border-accent transition-colors text-sm"
                   {...register("email")}
                 />
@@ -130,10 +130,6 @@ export default function LoginPage() {
               )}
             </button>
           </form>
-
-          <p className="text-white/20 text-xs text-center mt-6">
-            Default: admin@spaceviz.studio / admin123
-          </p>
         </div>
       </div>
     </div>

@@ -44,7 +44,7 @@ export default async function AdminDashboard() {
         <h1 className="font-heading text-3xl text-white font-bold mb-2">
           Dashboard
         </h1>
-        <p className="text-white/40">Welcome back to SPACE viz Studio admin panel.</p>
+        <p className="text-white/40">Welcome back to VIZs Studio admin panel.</p>
       </div>
 
       {/* Stats Grid */}

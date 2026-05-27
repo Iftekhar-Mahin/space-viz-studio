@@ -98,10 +98,13 @@ export default function NewProjectPage() {
             <label className={labelClasses}>Category *</label>
             <select className={inputClasses} {...register("category")}>
               <option value="">Select category</option>
-              <option value="Residential">Residential</option>
-              <option value="Commercial">Commercial</option>
-              <option value="Interior">Interior</option>
-              <option value="Landscape">Landscape</option>
+              <option value="Interior Design">Interior Design</option>
+              <option value="Exterior Design">Exterior Design</option>
+              <option value="3D Visualization">3D Visualization</option>
+              <option value="Architectural Visualization">Architectural Visualization</option>
+              <option value="Animation">Animation</option>
+              <option value="Product Design">Product Design</option>
+              <option value="Game Art">Game Art</option>
             </select>
             {errors.category && (
               <p className="text-red-400 text-xs mt-1">{errors.category.message}</p>

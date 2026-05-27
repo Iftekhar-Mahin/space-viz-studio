@@ -4,28 +4,49 @@ import { prisma } from "@/lib/db";
 import { projectSchema } from "@/lib/validations";
 import { slugify } from "@/lib/utils";
 import { auth } from "@/lib/auth";
-import { revalidatePath } from "next/cache";
+import { revalidatePath, unstable_cache, revalidateTag } from "next/cache";
 
 export async function getProjects(category?: string) {
-  const where = category && category !== "All" ? { category } : {};
-  return prisma.project.findMany({
-    where,
-    orderBy: { createdAt: "desc" },
-  });
+  const cachedFn = unstable_cache(
+    async (cat?: string) => {
+      const where = cat && cat !== "All" ? { category: cat } : {};
+      return prisma.project.findMany({
+        where,
+        orderBy: { createdAt: "desc" },
+      });
+    },
+    [`projects-list-${category || "All"}`],
+    { tags: ["projects"] }
+  );
+  return cachedFn(category);
 }
 
 export async function getFeaturedProjects() {
-  return prisma.project.findMany({
-    where: { featured: true },
-    orderBy: { createdAt: "desc" },
-    take: 3,
-  });
+  const cachedFn = unstable_cache(
+    async () => {
+      return prisma.project.findMany({
+        where: { featured: true },
+        orderBy: { createdAt: "desc" },
+        take: 3,
+      });
+    },
+    ["featured-projects"],
+    { tags: ["projects", "featured-projects"] }
+  );
+  return cachedFn();
 }
 
 export async function getProjectBySlug(slug: string) {
-  return prisma.project.findUnique({
-    where: { slug },
-  });
+  const cachedFn = unstable_cache(
+    async (projectSlug: string) => {
+      return prisma.project.findUnique({
+        where: { slug: projectSlug },
+      });
+    },
+    [`project-detail-${slug}`],
+    { tags: [`project-${slug}`, "projects"] }
+  );
+  return cachedFn(slug);
 }
 
 export async function createProject(data: {
@@ -61,6 +82,9 @@ export async function createProject(data: {
       },
     });
 
+    // Invalidate Server Caches
+    revalidateTag("projects", { expire: 0 });
+    
     revalidatePath("/projects");
     revalidatePath("/");
     revalidatePath("/admin/projects");
@@ -75,7 +99,15 @@ export async function deleteProject(id: string) {
   if (!session) return { error: "Unauthorized" };
 
   try {
+    const project = await prisma.project.findUnique({ where: { id }, select: { slug: true } });
     await prisma.project.delete({ where: { id } });
+
+    // Invalidate Server Caches
+    revalidateTag("projects", { expire: 0 });
+    if (project?.slug) {
+      revalidateTag(`project-${project.slug}`, { expire: 0 });
+    }
+
     revalidatePath("/projects");
     revalidatePath("/");
     revalidatePath("/admin/projects");
@@ -86,6 +118,9 @@ export async function deleteProject(id: string) {
 }
 
 export async function getProjectStats() {
+  const session = await auth();
+  if (!session) throw new Error("Unauthorized");
+
   const total = await prisma.project.count();
   const featured = await prisma.project.count({ where: { featured: true } });
   return { total, featured };

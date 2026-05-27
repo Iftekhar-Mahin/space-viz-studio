@@ -16,7 +16,16 @@ interface Project {
   year: number;
 }
 
-const categories = ["All", "Residential", "Commercial", "Interior", "Landscape"];
+const categories = [
+  "All",
+  "Interior Design",
+  "Exterior Design",
+  "3D Visualization",
+  "Architectural Visualization",
+  "Animation",
+  "Product Design",
+  "Game Art",
+];
 
 export default function ProjectGrid({ projects }: { projects: Project[] }) {
   const [activeCategory, setActiveCategory] = useState("All");

@@ -6,9 +6,9 @@ import ProjectGrid from "@/components/projects/ProjectGrid";
 import { getProjects } from "@/actions/projects";
 
 export const metadata: Metadata = {
-  title: "Our Projects | SPACE viz Studio",
+  title: "Our Projects | VIZs Studio",
   description:
-    "Explore our portfolio of residential, commercial, and interior design projects. Each project showcases our problem-solving approach to architecture.",
+    "Explore our portfolio of 3D visualization, interior & exterior design, animations, and game art. See how we transform concepts into stunning realities.",
 };
 
 export default async function ProjectsPage() {

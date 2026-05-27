@@ -28,21 +28,20 @@ export default async function HomePage() {
           <AnimatedSection>
             <div className="gold-line mx-auto mb-8" />
             <p className="text-accent uppercase tracking-[0.3em] text-sm font-semibold mb-6">
-              Modern Architecture Studio
+              Premium 3D & Game Art Studio
             </p>
           </AnimatedSection>
 
           <AnimatedSection delay={0.15}>
             <h1 className="heading-xl max-w-5xl mx-auto mb-6">
-              Designing Modern, Functional Spaces That{" "}
-              <span className="text-accent italic">Actually Work</span>
+              Bringing Your Imagination to Life With{" "}
+              <span className="text-accent italic">Stunning 3D Visuals</span>
             </h1>
           </AnimatedSection>
 
           <AnimatedSection delay={0.3}>
             <p className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto mb-10 leading-relaxed">
-              We don&apos;t just design buildings — we solve problems through architecture.
-              Every space we create is engineered for how people actually live, work, and thrive.
+              We are a state-of-the-art 3D studio specializing in high-fidelity architectural visualization, product animation, immersive environment design, and game-ready assets.
             </p>
           </AnimatedSection>
 
@@ -154,19 +153,19 @@ export default async function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
-                icon: Building2,
-                title: "Problem-First Design",
-                desc: "We start with your challenges, not our aesthetics. Every design decision solves a real problem.",
+                icon: Sparkles,
+                title: "Artistic Excellence",
+                desc: "We merge cutting-edge rendering technologies with meticulous art direction to deliver visuals that wow audiences.",
               },
               {
                 icon: Users,
-                title: "Collaborative Process",
-                desc: "You're involved at every stage. We believe great architecture comes from great partnerships.",
+                title: "Collaborative Pipeline",
+                desc: "You are involved at every milestone, from initial greybox blockouts to material bakes and final lighting.",
               },
               {
-                icon: Sparkles,
-                title: "Sustainable by Default",
-                desc: "Every project incorporates sustainable principles. Multiple LEED Platinum certifications.",
+                icon: Award,
+                title: "Engine-Ready Optimization",
+                desc: "All game art is fully optimized with clean topology, custom PBR textures, and low-poly limits ready for Unreal & Unity.",
               },
             ].map((item, i) => (
               <AnimatedSection key={item.title} delay={i * 0.1}>
@@ -187,56 +186,84 @@ export default async function HomePage() {
 
 
 
-      {/* ===== PROJECT TYPES ===== */}
+      {/* ===== SERVICES SHOWCASE ===== */}
       <section className="section-padding bg-primary">
         <div className="container-custom">
           <AnimatedSection>
             <div className="text-center mb-12">
               <div className="gold-line mx-auto mb-6" />
               <h2 className="heading-lg text-white mb-4">
-                What We <span className="text-accent">Design</span>
+                Our <span className="text-accent">Services</span>
               </h2>
+              <p className="text-white/60 text-lg max-w-2xl mx-auto">
+                We provide premium 3D design, animation, and production-ready game art tailored to elevate your projects.
+              </p>
             </div>
           </AnimatedSection>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               {
-                title: "Residential",
-                image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80",
-                desc: "Custom homes, villas, and residential developments",
+                title: "Interior Design",
+                image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800&q=80",
+                desc: "Bespoke interior visualization, spatial planning, and high-fidelity rendering.",
               },
               {
-                title: "Commercial",
-                image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80",
-                desc: "Offices, retail spaces, and hospitality venues",
+                title: "Exterior Design",
+                image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80",
+                desc: "Stunning building facades, structural landscaping, and outdoor architectural design.",
               },
               {
-                title: "Interior",
-                image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80",
-                desc: "Full interior transformations and adaptive reuse",
+                title: "3D Visualization",
+                image: "https://images.unsplash.com/photo-1541462608141-2ffb68df685e?w=800&q=80",
+                desc: "Photorealistic 3D renders, CGI productions, and hyper-realistic mockups.",
+              },
+              {
+                title: "Architectural Visualization",
+                image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80",
+                desc: "High-end cinematic rendering of residential, commercial, and urban designs.",
+              },
+              {
+                title: "Animation",
+                image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&q=80",
+                desc: "Cinematic flythroughs, walkthrough animations, and dynamic motion transitions.",
+              },
+              {
+                title: "Product Modeling & Animation",
+                image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=800&q=80",
+                desc: "Studio-grade product rendering, explosive views, and high-impact 3D commercial animations.",
+              },
+              {
+                title: "Game Environment Design",
+                image: "https://images.unsplash.com/photo-1538481199705-c710c4e965fc?w=800&q=80",
+                desc: "3D environment design, game ready modeling, texturing, lighting, and stage layout.",
+              },
+              {
+                title: "Game Prop Modeling",
+                image: "https://images.unsplash.com/photo-1612287230202-1bf1d85d1bdf?w=800&q=80",
+                desc: "Game ready props modeling and texturing with custom PBR materials.",
               },
             ].map((item, i) => (
-              <AnimatedSection key={item.title} delay={i * 0.15}>
+              <AnimatedSection key={item.title} delay={i * 0.1}>
                 <div className="relative aspect-[4/3] overflow-hidden group cursor-pointer">
                   <Image
                     src={item.image}
                     alt={item.title}
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-110"
-                    sizes="(max-width: 768px) 100vw, 33vw"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
                   <div className="absolute inset-0 bg-black/50 group-hover:bg-black/60 transition-colors duration-300" />
                   <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6">
-                    <h3 className="font-heading text-2xl text-white font-bold mb-2">
+                    <h3 className="font-heading text-xl text-white font-bold mb-2">
                       {item.title}
                     </h3>
-                    <p className="text-white/60 text-sm">{item.desc}</p>
+                    <p className="text-white/60 text-xs leading-relaxed max-w-[90%]">{item.desc}</p>
                     <Link
                       href="/projects"
-                      className="mt-4 text-accent text-sm font-semibold uppercase tracking-widest opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300"
+                      className="mt-4 text-accent text-xs font-semibold uppercase tracking-widest opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300"
                     >
-                      Explore →
+                      Explore Portfolio →
                     </Link>
                   </div>
                 </div>

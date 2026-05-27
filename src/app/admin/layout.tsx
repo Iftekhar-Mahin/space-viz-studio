@@ -25,11 +25,11 @@ export default async function AdminLayout({
         <div className="p-6 border-b border-white/10">
           <Link href="/" className="flex items-center gap-2">
             <div className="w-8 h-8 border-2 border-accent flex items-center justify-center">
-              <span className="text-accent font-heading text-sm font-bold">S</span>
+              <span className="text-accent font-heading text-sm font-bold">V</span>
             </div>
             <div className="flex flex-col leading-none">
               <span className="text-white font-heading text-sm tracking-widest font-bold">
-                SPACE<span className="text-accent">viz</span>
+                VIZ<span className="text-accent">s</span>
               </span>
               <span className="text-white/40 text-[0.5rem] tracking-[0.2em] uppercase">
                 Admin Panel

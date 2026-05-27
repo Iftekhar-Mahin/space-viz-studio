@@ -31,6 +31,10 @@ model Project {
   year        Int
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
+
+  @@index([category])
+  @@index([featured])
+  @@index([createdAt])
 }
 
 model Testimonial {
@@ -42,6 +46,9 @@ model Testimonial {
   avatar    String?
   featured  Boolean  @default(true)
   createdAt DateTime @default(now())
+
+  @@index([featured])
+  @@index([createdAt])
 }
 
 model Lead {
@@ -54,4 +61,9 @@ model Lead {
   tag         String?
   read        Boolean  @default(false)
   createdAt   DateTime @default(now())
+
+  @@index([email])
+  @@index([tag])
+  @@index([read])
+  @@index([createdAt])
 }

@@ -4,9 +4,9 @@ import AnimatedSection from "@/components/ui/AnimatedSection";
 import ContactForm from "@/components/contact/ContactForm";
 
 export const metadata: Metadata = {
-  title: "Contact | SPACE viz Studio",
+  title: "Contact | VIZs Studio",
   description:
-    "Get a free consultation for your architecture project. Tell us about your vision and we'll respond within 24 hours.",
+    "Get a free consultation for your 3D visualization, animation, or game art project. Tell us about your vision and we'll respond within 24 hours.",
 };
 
 export default function ContactPage() {
@@ -24,7 +24,7 @@ export default function ContactPage() {
               Get a Free <span className="text-accent">Consultation</span>
             </h1>
             <p className="text-white/60 text-lg max-w-2xl mx-auto">
-              Every great building starts with a conversation. Tell us about your
+              Every great creation starts with a conversation. Tell us about your
               project and we&apos;ll get back to you within 24 hours.
             </p>
           </AnimatedSection>
@@ -72,7 +72,7 @@ export default function ContactPage() {
                         {
                           icon: MessageCircle,
                           label: "Messenger",
-                          value: "SPACE viz studio",
+                          value: "VIZs Studio",
                           href: "https://m.me/spaceviz.studio", // Assuming this is the handle
                         },
                       ].map((item) => (
@@ -108,7 +108,7 @@ export default function ContactPage() {
                       Quick Connect
                     </p>
                     <a
-                      href="https://wa.me/8801768582654?text=Hi%20SPACE%20viz%20Studio%2C%20I%27m%20interested%20in%20discussing%20a%20project."
+                      href="https://wa.me/8801768582654?text=Hi%20VIZs%20Studio%2C%20I%27m%20interested%20in%20discussing%20a%20project."
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center gap-3 bg-[#25D366] text-white px-5 py-3 hover:bg-[#128C7E] transition-colors w-full justify-center font-semibold text-sm"

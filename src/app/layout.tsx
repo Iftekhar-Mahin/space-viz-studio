@@ -17,10 +17,10 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "SPACE viz Studio | Architecture & Design",
+  title: "VIZs | 3D Visualization, Animation & Game Art Studio",
   description:
-    "SPACE viz Studio creates modern, functional spaces that inspire. From luxury residences to commercial landmarks, we transform visions into architectural masterpieces.",
-  keywords: "architecture, design, residential, commercial, interior design, SPACE viz Studio",
+    "VIZs provides premium interior & exterior design, 3D architectural visualization, product modeling, animations, and game-ready environment and prop art.",
+  keywords: "3D visualization, interior design, exterior design, architectural visualization, animation, product modeling, game art, game environment, game props, VIZs",
 };
 
 export default function RootLayout({

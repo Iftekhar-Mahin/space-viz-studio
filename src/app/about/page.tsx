@@ -5,9 +5,9 @@ import { ArrowRight, Compass, PenTool, Hammer } from "lucide-react";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 
 export const metadata: Metadata = {
-  title: "About | SPACE viz Studio",
+  title: "About | VIZs Studio",
   description:
-    "Learn about SPACE viz Studio's design philosophy, our collaborative approach, and why clients trust us with their most ambitious projects.",
+    "Learn about VIZs' design philosophy, our collaborative approach, and why clients trust us with their most ambitious 3D, animation, and game art projects.",
 };
 
 export default function AboutPage() {
@@ -22,11 +22,10 @@ export default function AboutPage() {
               Our Story
             </p>
             <h1 className="heading-xl text-white mb-4">
-              About <span className="text-accent">SPACE viz</span> Studio
+              About <span className="text-accent">VIZs</span> Studio
             </h1>
             <p className="text-white/60 text-lg max-w-2xl mx-auto">
-              We believe architecture has the power to transform not just spaces,
-              but the lives of the people who inhabit them.
+              We believe in the power of visual storytelling, transforming concepts into photorealistic 3D environments, premium product animations, and stunning game art.
             </p>
           </AnimatedSection>
         </div>
@@ -40,18 +39,17 @@ export default function AboutPage() {
               <div className="relative aspect-[4/5] overflow-hidden">
                 <Image
                   src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80"
-                  alt="Architectural blueprints and design process"
+                  alt="3D Visualization and Game Art design process"
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
                 <div className="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-sm p-6">
                   <p className="font-heading text-lg text-primary italic">
-                    &ldquo;Architecture should speak of its time and place, but
-                    yearn for timelessness.&rdquo;
+                    &ldquo;CGI is not just about replicating reality, but about crafting spaces and objects that tell a captivating visual story.&rdquo;
                   </p>
                   <p className="text-accent text-sm mt-2 font-semibold">
-                    — Frank Gehry
+                    — VIZs Studio
                   </p>
                 </div>
               </div>
@@ -64,22 +62,13 @@ export default function AboutPage() {
                   Design <span className="text-accent">Philosophy</span>
                 </h2>
                 <p className="text-body-lg mb-6">
-                  At SPACE viz Studio, we approach every project as a unique
-                  problem to solve — not a template to fill. We believe the best
-                  architecture emerges from deep listening, rigorous analysis, and
-                  an unwavering commitment to both beauty and function.
+                  At VIZs Studio, we approach every project as a unique creative challenge — not a template to fill. We believe the best digital art and visualization emerge from deep collaboration, precise modeling, and an unwavering commitment to realism, lighting, and detail.
                 </p>
                 <p className="text-body-lg mb-6">
-                  Our designs are rooted in context — responding to landscape,
-                  climate, culture, and the specific human needs of each client.
-                  We reject the notion that form and function are at odds; in our
-                  work, they are inseparable.
+                  Our creations are designed for maximum impact — whether it's an immersive game-ready environment, a stunning architectural visualization, or a high-end product animation. We merge technical precision with artistic direction.
                 </p>
                 <p className="text-body-lg">
-                  Sustainability isn&apos;t a checkbox for us — it&apos;s a
-                  foundational principle. Every material choice, every
-                  orientation decision, every system we specify is evaluated
-                  through the lens of environmental responsibility.
+                  Optimization is our core strength. Whether we are building low-poly props optimized for game engine performance or high-fidelity offline renders, we ensure optimal efficiency without compromising visual excellence.
                 </p>
               </div>
             </AnimatedSection>
@@ -97,8 +86,7 @@ export default function AboutPage() {
                 Our <span className="text-accent">Process</span>
               </h2>
               <p className="text-body-lg max-w-2xl mx-auto">
-                We&apos;ve refined our approach over 15 years and 120+ projects.
-                It&apos;s designed to minimize surprises and maximize results.
+                We've refined our production pipeline to deliver high-quality, production-ready assets and animations on schedule.
               </p>
             </div>
           </AnimatedSection>
@@ -109,19 +97,19 @@ export default function AboutPage() {
                 icon: Compass,
                 step: "01",
                 title: "Discover",
-                desc: "We begin with deep listening. Understanding your vision, needs, constraints, and aspirations through intensive workshops and site analysis. This phase defines everything that follows.",
+                desc: "We begin by understanding your artistic vision, technical specs, reference mood boards, and target platforms (such as Unreal Engine, Unity, or high-end web/video).",
               },
               {
                 icon: PenTool,
                 step: "02",
                 title: "Design",
-                desc: "From concept sketches to detailed 3D visualizations, we iterate rapidly with your input. You see and experience the space before a single brick is laid. No surprises, only refinement.",
+                desc: "From initial grayboxes and high-poly sculpts to photorealistic lighting setups and texture painting, we iterate dynamically with your input. You review models at key milestones.",
               },
               {
                 icon: Hammer,
                 step: "03",
                 title: "Deliver",
-                desc: "We manage construction with meticulous attention to detail, ensuring the built result matches (or exceeds) the design vision. Quality control is obsessive, timelines are respected.",
+                desc: "We deliver production-ready 3D assets, animations, and fully-lit environments, optimized and format-ready for immediate integration into your pipeline or presentation.",
               },
             ].map((item, i) => (
               <AnimatedSection key={item.step} delay={i * 0.15}>
@@ -153,14 +141,10 @@ export default function AboutPage() {
             </h2>
             <div className="max-w-3xl mx-auto space-y-6 text-white/70 text-lg leading-relaxed">
               <p>
-                Over 15 years, we&apos;ve built our reputation one relationship
-                at a time. 70% of our projects come from repeat clients or
-                referrals — the strongest endorsement any firm can receive.
+                We've built a stellar reputation one project at a time, working with architects, game developers, product companies, and agencies worldwide. A significant portion of our projects comes from repeat clients or word-of-mouth recommendations.
               </p>
               <p>
-                We are transparent about budgets, honest about timelines, and
-                uncompromising about quality. When we say a project will be done
-                right, it will be done right.
+                We are transparent about workflows, precise with polygon budgets and textures, and uncompromising about detail. When we commit to a deadline, we deliver.
               </p>
             </div>
             <div className="mt-10">

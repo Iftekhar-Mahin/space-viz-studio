@@ -41,7 +41,7 @@ export default function Footer() {
                 <Logo className="w-10 h-10" />
                 <div className="flex flex-col leading-none">
                   <span className="text-white font-heading text-lg tracking-widest font-bold">
-                    SPACE<span className="text-accent">viz</span>
+                    VIZ<span className="text-accent">s</span>
                   </span>
                   <span className="text-white/50 text-[0.6rem] tracking-[0.3em] uppercase">
                     Studio
@@ -49,8 +49,7 @@ export default function Footer() {
                 </div>
               </div>
               <p className="text-white/40 text-sm leading-relaxed">
-                Creating spaces that inspire, function, and endure. Modern
-                architecture for visionary clients.
+                Premium 3D visualization, animation, and game art studio. Creating immersive and functional digital spaces.
               </p>
             </div>
 
@@ -79,11 +78,13 @@ export default function Footer() {
               </h4>
               <div className="flex flex-col gap-3">
                 {[
-                  "Residential Design",
-                  "Commercial Architecture",
                   "Interior Design",
-                  "Landscape Design",
-                  "Renovation",
+                  "Exterior Design",
+                  "3D Visualization",
+                  "Architectural Visualization",
+                  "Animation",
+                  "Product Modeling & Animation",
+                  "Game Environment & Props",
                 ].map((service) => (
                   <span key={service} className="text-white/50 text-sm">
                     {service}
@@ -116,7 +117,7 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 text-white/50 hover:text-accent text-sm transition-colors"
                 >
-                  <MessageCircle size={14} className="shrink-0" /> SPACE viz studio
+                  <MessageCircle size={14} className="shrink-0" /> VIZs Studio
                 </a>
                 <span className="flex items-start gap-2 text-white/50 text-sm">
                   <MapPin size={14} className="shrink-0 mt-1" /> 
@@ -129,7 +130,7 @@ export default function Footer() {
           {/* Bottom Bar */}
           <div className="border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-white/30 text-xs">
-              © {new Date().getFullYear()} SPACE viz Studio. All rights reserved.
+              © {new Date().getFullYear()} VIZs Studio. All rights reserved.
             </p>
             <div className="flex gap-6">
               {["Privacy Policy", "Terms of Service"].map((link) => (
