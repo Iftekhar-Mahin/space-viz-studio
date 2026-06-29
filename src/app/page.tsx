@@ -215,7 +215,7 @@ export default async function HomePage() {
               },
               {
                 title: "3D Visualization",
-                image: "https://images.unsplash.com/photo-1541462608141-2ffb68df685e?w=800&q=80",
+                image: "https://images.unsplash.com/photo-1614729939124-032f0b56c9ce?w=800&q=80",
                 desc: "Photorealistic 3D renders, CGI productions, and hyper-realistic mockups.",
               },
               {
@@ -240,7 +240,7 @@ export default async function HomePage() {
               },
               {
                 title: "Game Prop Modeling",
-                image: "https://images.unsplash.com/photo-1612287230202-1bf1d85d1bdf?w=800&q=80",
+                image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&q=80",
                 desc: "Game ready props modeling and texturing with custom PBR materials.",
               },
             ].map((item, i) => (
