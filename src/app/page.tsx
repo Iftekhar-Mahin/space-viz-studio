@@ -14,7 +14,7 @@ export default async function HomePage() {
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/images/commercial_building.jpg"
+            src="/images/commercial_building.jpeg"
             alt="Modern architectural masterpiece"
             fill
             className="object-cover"
@@ -205,42 +205,42 @@ export default async function HomePage() {
             {[
               {
                 title: "Interior Design",
-                image: "/images/modern_house.jpg",
+                image: "/images/modern_house.jpeg",
                 desc: "Bespoke interior visualization, spatial planning, and high-fidelity rendering.",
               },
               {
                 title: "Exterior Design",
-                image: "/images/commercial_building.jpg",
+                image: "/images/commercial_building.jpeg",
                 desc: "Stunning building facades, structural landscaping, and outdoor architectural design.",
               },
               {
                 title: "3D Visualization",
-                image: "/images/night_view.jpg",
+                image: "/images/night_view.jpeg",
                 desc: "Photorealistic 3D renders, CGI productions, and hyper-realistic mockups.",
               },
               {
                 title: "Architectural Visualization",
-                image: "/images/modern_house.jpg",
+                image: "/images/modern_house.jpeg",
                 desc: "High-end cinematic rendering of residential, commercial, and urban designs.",
               },
               {
                 title: "Animation",
-                image: "/images/night_view.jpg",
+                image: "/images/night_view.jpeg",
                 desc: "Cinematic flythroughs, walkthrough animations, and dynamic motion transitions.",
               },
               {
                 title: "Product Modeling & Animation",
-                image: "/images/commercial_building.jpg",
+                image: "/images/commercial_building.jpeg",
                 desc: "Studio-grade product rendering, explosive views, and high-impact 3D commercial animations.",
               },
               {
                 title: "Game Environment Design",
-                image: "/images/night_view.jpg",
+                image: "/images/night_view.jpeg",
                 desc: "3D environment design, game ready modeling, texturing, lighting, and stage layout.",
               },
               {
                 title: "Game Prop Modeling",
-                image: "/images/modern_house.jpg",
+                image: "/images/modern_house.jpeg",
                 desc: "Game ready props modeling and texturing with custom PBR materials.",
               },
             ].map((item, i) => (
