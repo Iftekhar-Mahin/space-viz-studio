@@ -48,8 +48,8 @@ export default function ContactPage() {
                         {
                           icon: Mail,
                           label: "Email Us",
-                          value: "spaceviz.studio@gmail.com",
-                          href: "mailto:spaceviz.studio@gmail.com",
+                          value: "vizs.studio2026@gmail.com",
+                          href: "mailto:vizs.studio2026@gmail.com",
                         },
                         {
                           icon: Phone,
@@ -71,9 +71,9 @@ export default function ContactPage() {
                         },
                         {
                           icon: MessageCircle,
-                          label: "Messenger",
+                          label: "Facebook",
                           value: "VIZs Studio",
-                          href: "https://m.me/spaceviz.studio", // Assuming this is the handle
+                          href: "https://www.facebook.com/share/1EdzN9h4s9/",
                         },
                       ].map((item) => (
                         <div key={item.label} className="flex items-start gap-4">

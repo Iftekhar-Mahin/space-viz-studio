@@ -14,7 +14,7 @@ export default async function HomePage() {
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80"
+            src="/images/commercial_building.jpg"
             alt="Modern architectural masterpiece"
             fill
             className="object-cover"
@@ -205,42 +205,42 @@ export default async function HomePage() {
             {[
               {
                 title: "Interior Design",
-                image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800&q=80",
+                image: "/images/modern_house.jpg",
                 desc: "Bespoke interior visualization, spatial planning, and high-fidelity rendering.",
               },
               {
                 title: "Exterior Design",
-                image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80",
+                image: "/images/commercial_building.jpg",
                 desc: "Stunning building facades, structural landscaping, and outdoor architectural design.",
               },
               {
                 title: "3D Visualization",
-                image: "https://images.unsplash.com/photo-1614729939124-032f0b56c9ce?w=800&q=80",
+                image: "/images/night_view.jpg",
                 desc: "Photorealistic 3D renders, CGI productions, and hyper-realistic mockups.",
               },
               {
                 title: "Architectural Visualization",
-                image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80",
+                image: "/images/modern_house.jpg",
                 desc: "High-end cinematic rendering of residential, commercial, and urban designs.",
               },
               {
                 title: "Animation",
-                image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&q=80",
+                image: "/images/night_view.jpg",
                 desc: "Cinematic flythroughs, walkthrough animations, and dynamic motion transitions.",
               },
               {
                 title: "Product Modeling & Animation",
-                image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=800&q=80",
+                image: "/images/commercial_building.jpg",
                 desc: "Studio-grade product rendering, explosive views, and high-impact 3D commercial animations.",
               },
               {
                 title: "Game Environment Design",
-                image: "https://images.unsplash.com/photo-1538481199705-c710c4e965fc?w=800&q=80",
+                image: "/images/night_view.jpg",
                 desc: "3D environment design, game ready modeling, texturing, lighting, and stage layout.",
               },
               {
                 title: "Game Prop Modeling",
-                image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&q=80",
+                image: "/images/modern_house.jpg",
                 desc: "Game ready props modeling and texturing with custom PBR materials.",
               },
             ].map((item, i) => (

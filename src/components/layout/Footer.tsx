@@ -100,10 +100,10 @@ export default function Footer() {
               </h4>
               <div className="flex flex-col gap-3">
                 <a
-                  href="mailto:spaceviz.studio@gmail.com"
+                  href="mailto:vizs.studio2026@gmail.com"
                   className="flex items-center gap-2 text-white/50 hover:text-accent text-sm transition-colors"
                 >
-                  <Mail size={14} className="shrink-0" /> spaceviz.studio@gmail.com
+                  <Mail size={14} className="shrink-0" /> vizs.studio2026@gmail.com
                 </a>
                 <a
                   href="tel:+8801768582654"
@@ -112,7 +112,7 @@ export default function Footer() {
                   <Phone size={14} className="shrink-0" /> 01768-582654
                 </a>
                 <a
-                  href="https://m.me/spaceviz.studio"
+                  href="https://www.facebook.com/share/1EdzN9h4s9/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 text-white/50 hover:text-accent text-sm transition-colors"
